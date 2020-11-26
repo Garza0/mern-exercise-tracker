@@ -1,21 +1,23 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from './components/Navbar';
-import EditExercise from './components/Navbar';
-import ExercisesList from './components/Navbar';
-import CreateExercise from './components/Navbar';
-import CreateUser from './components/Navbar';
+import Navbar from "./components/Navbar";
+import EditExercise from "./components/EditExercise";
+import ExercisesList from "./components/ExercisesList";
+import CreateExercise from "./components/CreateExercise";
+import CreateUser from "./components/CreateUser";
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <br />
-      <Route path="/" exact component={ExercisesList} />
-      <Route path="/edit/:id" component={EditExercise} />
-      <Route path="/create" component={CreateExercise} />
-      <Route path="/user" component={CreateUser} />
+      <div className="container">
+        <Navbar />
+        <br />
+        <Route path="/" exact component={ExercisesList} />
+        <Route path="/edit/:id" component={EditExercise} />
+        <Route path="/create" component={CreateExercise} />
+        <Route path="/user" component={CreateUser} />
+      </div>
     </Router>
   );
 }
